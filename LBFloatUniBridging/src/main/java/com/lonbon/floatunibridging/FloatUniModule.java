@@ -66,7 +66,7 @@ public class FloatUniModule extends UniModule implements SettingProviderInterfac
         //传入上下文
         IpcManager.INSTANCE.init(mUniSDKInstance.getContext());
         //连接服务端，传入的是服务端的包名
-        IpcManager.INSTANCE.open("com.demo.ipcdemo", new Function0<Unit>() {
+        IpcManager.INSTANCE.open("com.lonbon.lonbon_app", new Function0<Unit>() {
             @Override
             public Unit invoke() {
                 isConnect = true;
@@ -269,7 +269,8 @@ public class FloatUniModule extends UniModule implements SettingProviderInterfac
             showToast();
             jsonObject.put("code",-1);
         }else {
-            jsonObject.put("code",swingCardService.syncStart());
+            swingCardService.start();
+            jsonObject.put("code",0);
         }
         uniJSCallback.invoke(jsonObject);
     }
@@ -286,7 +287,8 @@ public class FloatUniModule extends UniModule implements SettingProviderInterfac
             showToast();
             jsonObject.put("code",-1);
         }else {
-            jsonObject.put("code",swingCardService.syncStop());
+            swingCardService.stop();
+            jsonObject.put("code",0);
         }
         uniJSCallback.invoke(jsonObject);
     }
@@ -325,7 +327,8 @@ public class FloatUniModule extends UniModule implements SettingProviderInterfac
             showToast();
             jsonObject.put("code",-1);
         }else {
-            jsonObject.put("code",fingerprintService.start());
+            fingerprintService.start();
+            jsonObject.put("code",0);
         }
         uniJSCallback.invoke(jsonObject);
 
@@ -340,7 +343,8 @@ public class FloatUniModule extends UniModule implements SettingProviderInterfac
             showToast();
             jsonObject.put("code",-1);
         }else {
-            jsonObject.put("code",fingerprintService.stop());
+            fingerprintService.stop();
+            jsonObject.put("code",0);
         }
         uniJSCallback.invoke(jsonObject);
     }
@@ -446,7 +450,8 @@ public class FloatUniModule extends UniModule implements SettingProviderInterfac
             showToast();
             jsonObject.put("code",-1);
         }else {
-            jsonObject.put("code",temperatureMeasurementService.syncStart());
+            temperatureMeasurementService.start();
+            jsonObject.put("code",0);
         }
         uniJSCallback.invoke(jsonObject);
 
@@ -461,7 +466,8 @@ public class FloatUniModule extends UniModule implements SettingProviderInterfac
             showToast();
             jsonObject.put("code",-1);
         }else {
-            jsonObject.put("code",temperatureMeasurementService.syncStop());
+            temperatureMeasurementService.stop();
+            jsonObject.put("code",0);
         }
         uniJSCallback.invoke(jsonObject);
 
