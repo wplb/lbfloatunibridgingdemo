@@ -70,6 +70,8 @@ public class FloatUniModule extends UniModule implements SettingProviderInterfac
             @Override
             public Unit invoke() {
                 isConnect = true;
+                Log.d(TAG, "initIPCManager:invoke: 服务链接成功！");
+                Toast.makeText(mUniSDKInstance.getContext(), "服务链接成功！", Toast.LENGTH_LONG).show();
                 return null;
             }
         });
@@ -269,8 +271,8 @@ public class FloatUniModule extends UniModule implements SettingProviderInterfac
             showToast();
             jsonObject.put("code",-1);
         }else {
-            swingCardService.start();
             jsonObject.put("code",0);
+            swingCardService.start();
         }
         uniJSCallback.invoke(jsonObject);
     }
@@ -287,8 +289,8 @@ public class FloatUniModule extends UniModule implements SettingProviderInterfac
             showToast();
             jsonObject.put("code",-1);
         }else {
-            swingCardService.stop();
             jsonObject.put("code",0);
+            swingCardService.stop();
         }
         uniJSCallback.invoke(jsonObject);
     }
@@ -327,8 +329,8 @@ public class FloatUniModule extends UniModule implements SettingProviderInterfac
             showToast();
             jsonObject.put("code",-1);
         }else {
-            fingerprintService.start();
             jsonObject.put("code",0);
+            fingerprintService.start();
         }
         uniJSCallback.invoke(jsonObject);
 
@@ -343,8 +345,8 @@ public class FloatUniModule extends UniModule implements SettingProviderInterfac
             showToast();
             jsonObject.put("code",-1);
         }else {
-            fingerprintService.stop();
             jsonObject.put("code",0);
+            fingerprintService.stop();
         }
         uniJSCallback.invoke(jsonObject);
     }
@@ -450,8 +452,8 @@ public class FloatUniModule extends UniModule implements SettingProviderInterfac
             showToast();
             jsonObject.put("code",-1);
         }else {
-            temperatureMeasurementService.start();
             jsonObject.put("code",0);
+            temperatureMeasurementService.start();
         }
         uniJSCallback.invoke(jsonObject);
 
@@ -466,8 +468,8 @@ public class FloatUniModule extends UniModule implements SettingProviderInterfac
             showToast();
             jsonObject.put("code",-1);
         }else {
-            temperatureMeasurementService.stop();
             jsonObject.put("code",0);
+            temperatureMeasurementService.stop();
         }
         uniJSCallback.invoke(jsonObject);
 
@@ -616,7 +618,7 @@ public class FloatUniModule extends UniModule implements SettingProviderInterfac
     /**********************************************************************************/
 
     private void showToast(){
-        Toast.makeText(mUniSDKInstance.getContext(), "连接服务中，请稍后！", Toast.LENGTH_SHORT).show();
+        Toast.makeText(mUniSDKInstance.getContext(), "连接服务中，请稍后！", Toast.LENGTH_LONG).show();
     }
     /**********************************************************************************/
 }
