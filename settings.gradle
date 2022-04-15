@@ -1,0 +1,26 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+        maven { url 'https://www.jitpack.io' }
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://www.jitpack.io' }
+//        maven {
+//            allowInsecureProtocol = true
+//            url 'http://192.168.4.205:8081/repository/maven-snapshots/'
+//        }
+        flatDir {
+            dirs('LBFloatUniBridging/libs')
+        }
+    }
+}
+rootProject.name = "LBFloatUniDemo"
+include ':app'
+include ':LBFloatUniBridging'
