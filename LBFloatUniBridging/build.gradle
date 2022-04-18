@@ -34,7 +34,18 @@ android {
         jvmTarget = '11'
         useIR = true
     }
-
+    afterEvaluate {
+        publishing {
+            publications {
+                release(MavenPublication) {
+                    from components.release
+                    groupId = 'com.lonbon.floatunibridging'
+                    artifactId = 'floatunibridgingdemo'
+                    version = '1.0'
+                }
+            }
+        }
+    }
 }
 
 dependencies {
@@ -56,17 +67,7 @@ dependencies {
     implementation "com.github.Lon-Bon:lb-extend-service:develop-SNAPSHOT"
     api(name:'uniapp-v8-release',ext:'aar')
 
+    implementation 'com.github.wplb:lbfloatunibridgingdemo:main-SNAPSHOT'
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            release(MavenPublication) {
-                from components.release
-                groupId = 'com.lonbon.floatunibridging'
-                artifactId = 'floatunibridgingdemo'
-                version = '1.0'
-            }
-        }
-    }
-}
+
