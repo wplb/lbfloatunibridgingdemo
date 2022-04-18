@@ -4,7 +4,6 @@ pluginManagement {
         google()
         mavenCentral()
         maven { url 'https://www.jitpack.io' }
-        maven { url 'https://maven.fabric.io/public' }
     }
 }
 dependencyResolutionManagement {
@@ -13,7 +12,6 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         maven { url 'https://www.jitpack.io' }
-        maven { url 'https://maven.fabric.io/public' }
 //        maven {
 //            allowInsecureProtocol = true
 //            url 'http://192.168.4.205:8081/repository/maven-snapshots/'
