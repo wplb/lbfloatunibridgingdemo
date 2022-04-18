@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.library'
     id 'maven-publish'
+    id 'kotlin-android'
 }
 group = 'com.lonbon.floatunibridging'
 version = '1.0'
@@ -29,10 +30,10 @@ android {
         targetCompatibility = JavaVersion.VERSION_11
     }
 
-//    kotlinOptions {
-//        jvmTarget = '11'
-//        useIR = true
-//    }
+    kotlinOptions {
+        jvmTarget = '11'
+        useIR = true
+    }
 
 }
 
@@ -60,7 +61,6 @@ dependencies {
 afterEvaluate {
     publishing {
         publications {
-            // Creates a Maven publication called "release".
             release(MavenPublication) {
                 from components.release
                 groupId = 'com.lonbon.floatunibridging'
