@@ -5,20 +5,6 @@ plugins {
 group = 'com.lonbon.floatunibridging'
 version = '1.0'
 
-
-afterEvaluate {
-    publishing {
-        publications {
-            // Creates a Maven publication called "release".
-            release(MavenPublication) {
-                from components.release
-                groupId = 'com.lonbon.floatunibridging'
-                artifactId = 'floatunibridgingdemo'
-                version = '1.0'
-            }
-        }
-    }
-}
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
@@ -64,4 +50,18 @@ dependencies {
     implementation "com.github.Lon-Bon:lb-extend-service:develop-SNAPSHOT"
     api(name:'uniapp-v8-release',ext:'aar')
 
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.lonbon.floatunibridging'
+                artifactId = 'floatunibridgingdemo'
+                version = '1.0'
+            }
+        }
+    }
 }
