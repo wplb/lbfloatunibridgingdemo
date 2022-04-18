@@ -72,9 +72,17 @@ public class FloatUniModule extends UniModule implements SettingProviderInterfac
                 isConnect = true;
                 Log.d(TAG, "initIPCManager:invoke: 服务链接成功！");
                 Toast.makeText(mUniSDKInstance.getContext(), "服务链接成功！", Toast.LENGTH_LONG).show();
+                initService();
                 return null;
             }
         });
+
+    }
+
+    /**
+     * 需要在服务链接成功后才能获取到注册类
+     */
+    private void initService(){
         systemSetService = IpcManager.INSTANCE.getService(SystemSetService.class);
         intercomService = IpcManager.INSTANCE.getService(IntercomService.class);
         swingCardService = IpcManager.INSTANCE.getService(SwingCardService.class);
